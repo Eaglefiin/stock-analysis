@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phân Tích Cổ Phiếu</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="/" class="header-logo">Phân Tích <span>Cổ Phiếu</span></a>
+  </header>
+
+  <!-- STOCK SELECTOR -->
+  <div class="stock-selector">
+    <label>Mã cổ phiếu</label>
+    <select class="stock-select" id="stockSelect">
+      <option value="">-- Đang tải --</option>
+    </select>
+    <div class="stock-meta" id="stockMeta"></div>
+    <div class="stock-price" id="stockPrice"></div>
+    <div class="stock-updated" id="stockUpdated"></div>
+  </div>
+
+  <!-- TAB NAVIGATION -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="tab1">Chỉ số & Định giá</button>
+    <button class="tab-btn" data-tab="tab2">Tổng quan doanh nghiệp</button>
+    <button class="tab-btn" data-tab="tab3">Hoạt động kinh doanh</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <div class="tab-panel active" id="tab1">
+      <div class="loading" id="tab1-loading">Đang tải dữ liệu</div>
+      <div id="tab1-content"></div>
+    </div>
+
+    <div class="tab-panel" id="tab2">
+      <div class="loading" id="tab2-loading">Đang tải dữ liệu</div>
+      <div id="tab2-content"></div>
+    </div>
+
+    <div class="tab-panel" id="tab3">
+      <div class="loading" id="tab3-loading">Đang tải dữ liệu</div>
+      <div id="tab3-content"></div>
+    </div>
+
+  </main>
+
+  <!-- CHART.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- MODULES -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
