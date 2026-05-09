@@ -46,7 +46,7 @@ export async function renderTab1(sheetId) {
       ${metricCard('Giá cổ phiếu', fmtPrice(gia), 'VNĐ')}
       ${metricCard('P/E (TTM)', fmt(pe) + 'x', 'Giá / EPS')}
       ${metricCard('P/B', fmt(pb) + 'x', 'Giá / BVPS')}
-      ${metricCard('BVPS', fmtPrice(bvps), 'VNĐ/CP')}
+     ${metricCard('BVPS', fmtBillion(bvps), 'VNĐ/CP')}
     </div>
 
     <div class="section-header">

@@ -92,8 +92,8 @@ function updateStockMeta(stock) {
   document.getElementById('stockPrice').textContent =
     stock.price ? Number(stock.price).toLocaleString('vi-VN') + ' đ' : '';
 
-  document.getElementById('stockUpdated').textContent =
-    stock.updated ? `Cập nhật: ${stock.updated}` : '';
+document.getElementById('stockUpdated').textContent =
+    stock.updated ? `Cập nhật: ${formatDate(stock.updated)}` : '';
 }
 
 // ---- Tab navigation ----
@@ -122,4 +122,16 @@ function showTabError(tabId) {
 }
 
 // ---- Start ----
+function formatDate(raw) {
+  if (!raw) return '';
+  // Google Sheets trả về dạng Date(2026,8,5) — tháng 0-based
+  const match = String(raw).match(/Date\((\d+),(\d+),(\d+)\)/);
+  if (match) {
+    const y = match[1];
+    const m = String(Number(match[2]) + 1).padStart(2, '0');
+    const d = String(match[3]).padStart(2, '0');
+    return `${d}/${m}/${y}`;
+  }
+  return raw;
+}
 init();
